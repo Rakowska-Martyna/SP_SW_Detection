@@ -1,5 +1,5 @@
 # SP_SW_Detection
-MATLAB pipeline for sleep spindles and slow waves detection used in Rakowska et al. (2021).
+MATLAB pipeline for sleep spindles and slow waves detection used in Rakowska et al. (2021) and (2022).
 
 Contains 9 scripts for spindle analysis, numbered in the order in which they need to be run:
 - pr0 - create EEG layour for your data
@@ -29,6 +29,7 @@ The identified spindles and SOs were then separated into those that fell within 
 
 Spindle density was calculated by dividing the total number of spindles at each electrode by the length (in minutes) of the target period (cue period during target sleep stage, no-cue period during target sleep stage). Spindle density, together with the number of spindle and SO events during the cue and no-cue period of each of the target sleep stages, are presented in Table S2. Spindle laterality was obtained by subtracting spindle density over the right motor channels from the spindle density over the left motor channels.
 
-References:
+# References:
 
-Rakowska, M., Abdellahi, M. E., Bagrowska, P., Navarrete, M., & Lewis, P. A. (2021). Long term effects of cueing procedural memory reactivation during NREM sleep. NeuroImage, 244, 118573.
+* Rakowska, M., Abdellahi, M. E., Bagrowska, P., Navarrete, M., & Lewis, P. A. (2021). Long term effects of cueing procedural memory reactivation during NREM sleep. NeuroImage, 244, 118573.
+* Rakowska, M., Bagrowska, P., Lazari, A., Navarrete, M., Abdellahi, M. E., Johansen-Berg, H., & Lewis, P. A. (2022). Cueing motor memory reactivation during NREM sleep engenders learning-related changes in precuneus and sensorimotor structures. bioRxiv.
