@@ -1,7 +1,8 @@
 # SP_SW_Detection
 MATLAB pipeline for sleep spindles and slow waves detection used in Rakowska et al. (2021).
 
-Contains 12 scripts for spindle analysis, numbered in the order in which they need to be run:
+Contains 9 scripts for spindle analysis, numbered in the order in which they need to be run:
+- pr0 - create EEG layour for your data
 - pr1 - preprocesses raw EEG data for spindle analysis
 - pr2 - identifies spindle and slow-oscillation events across the sleep stage of interest & calculates relevant statistics (e.g. spindle density) 
 - pr3 - summarises spindle density from pr2 across participants 
