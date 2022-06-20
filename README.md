@@ -14,7 +14,7 @@ Contains 9 scripts for spindle analysis, numbered in the order in which they nee
 
 ## Requirements 
 
-The pipeline requires FieldTrip (https://www.fieldtriptoolbox.org/) and access to myToolbox by Miguel Navarrete (https://github.com/mnavarretem/myToolbox.git)
+The pipeline requires FieldTrip (https://www.fieldtriptoolbox.org/) and access to *myToolbox* by Miguel Navarrete (https://github.com/mnavarretem/myToolbox.git)
 
 ## Authors and contributors
 
