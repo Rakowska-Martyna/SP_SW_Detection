@@ -26,6 +26,13 @@ elseif liveamp == 1
  
 end
 
+% Select particiapnts with bad ref channel(s) (i.e. channels impossible to score) 
+% - bad channel interpolated before, now need to replace it here
+
+int_ref_Path = 'yourDirectory/Sleep_EEG/Interpolated_channels' ; %interpolated channels folder
+bad_ref_ppnt = {'MRI_part8_sleep.eeg','MRI_part16_sleep1.eeg'}; 
+bad_ref_ppnt_filename = fullfile(ch_rootPath,bad_ref_ppnt);
+bad_channel = 'TP10'; %interpolated channel
 
 %% Define your EEG variables
 
@@ -72,6 +79,36 @@ tic
         st_dat.label	= st_dat.label(vt_idDat);
 toc
        
+  %% Replace bad ref with interpolated ref for chosen participants       
+  
+  % if the current ppnt is the one with bad red, find where the bad ref is
+   if ismember(ch_filename,bad_ref_ppnt_filename)
+       intch=[];
+        for x = 1:length(st_dat.label)
+            if ismember(st_dat.label(x,1),bad_channel)
+                intch = x; % st_dat.label(x,1) is the bad channel = interpolated electrode
+                cd(int_ref_Path)
+                fprintf('Using interpolated ref')
+            end
+        end
+     
+   % go to the folder with the interpolated ref and find the correct ppnt
+       cd(int_ref_Path)
+       
+       listing = dir;
+    for K   = 1:length(listing)
+        fname = listing(K).name;
+        name  = mx_pFiles{pp}(1:15);
+        if length(fname) > 3
+            if strcmp(fname(1:15), name); break; end
+        end
+    end 
+    
+    % load the interpolated ref and replace the bad ref with the interpolated one
+       load(fname)
+       st_dat.trial{1,1}(intch,:) = st_dat_badchannel;
+   end
+     
         %% Down-sample 500Hz data to 250Hz 
         fprintf('Downsampling \n')
         if liveamp == 0
