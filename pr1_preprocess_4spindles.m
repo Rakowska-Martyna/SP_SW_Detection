@@ -26,7 +26,7 @@ elseif liveamp == 1
  
 end
 
-% Select particiapnts with bad ref channel(s) (i.e. channels impossible to score) 
+%% Select particiapnts with bad ref channel(s) (i.e. channels impossible to score) 
 % - bad channel interpolated before, now need to replace it here
 
 int_ref_Path = 'yourDirectory/Sleep_EEG/Interpolated_channels' ; %interpolated channels folder
